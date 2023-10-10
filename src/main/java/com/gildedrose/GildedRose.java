@@ -16,6 +16,12 @@ class GildedRose {
     this.items = items;
   }
 
+  public void qualiteAugmentantDe1( int i){
+    if (items[i].quality < QUALITY_MAX ) {
+        items[i].quality += 1 ;
+    }
+  }
+
   public void updateQuality() {
     for (int i = 0; i < items.length; i++) {
       if (!items[i].name.equals("Aged Brie")
