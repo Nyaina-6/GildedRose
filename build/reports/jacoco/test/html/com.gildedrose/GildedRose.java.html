@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GildedRose.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">GildedRose.java</span></div><h1>GildedRose.java</h1><pre class="source lang-java linenums">package com.gildedrose;
+
+class GildedRose {
+  static final String AGED_BRIE = &quot;Aged Brie&quot;;
+  static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
+  static final String BACKSTAGE = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
+
+  static final int QUALITY_MAX = 50;
+  static final int BACKSTAGE_SELLIN_LIMIT2 = 11;
+  static final int BACKSTAGE_SELLIN_LIMIT3 = 6;
+  
+
+  Item[] items;
+
+<span class="nc" id="L15">  GildedRose(Item[] itemsList) {</span>
+<span class="nc" id="L16">    this.items = itemsList;</span>
+<span class="nc" id="L17">  }</span>
+  
+  public void qualiteAugmentantDe1( int i){
+<span class="nc bnc" id="L20" title="All 2 branches missed.">    if (items[i].quality &lt; QUALITY_MAX ) {</span>
+<span class="nc" id="L21">        items[i].quality += 1 ;</span>
+    }
+<span class="nc" id="L23">  }</span>
+	//dans le cas ou items[i].name == &quot;Aged Brie&quot;
+	public void agedBrieQuality(int i){
+<span class="nc bnc" id="L26" title="All 2 branches missed.">    if (items[i].quality == QUALITY_MAX){</span>
+<span class="nc" id="L27">        items[i].quality = QUALITY_MAX ;</span>
+    }
+<span class="nc" id="L29">        qualiteAugmentantDe1(i);</span>
+    
+<span class="nc" id="L31">    }</span>
+
+	public void sulfurasQuality(int i){
+<span class="nc bnc" id="L34" title="All 2 branches missed.">		  items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;</span>
+<span class="nc" id="L35">	}</span>
+
+	public void backstageQuality(int i){
+<span class="nc bnc" id="L38" title="All 2 branches missed.">      if (items[i].quality &lt; 50){</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">          items[i].quality  = (items[i].sellIn &lt;=0) ? 0 : items[i].quality+1 ;</span>
+      }
+<span class="nc" id="L41">	  }</span>
+  
+
+	public void defaultObjectQuality(int i){
+<span class="nc" id="L45">    items[i].quality = Math.max(items[i].quality-1 , 0);</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">    if(items[i].sellIn&lt;=0) </span>
+        {
+<span class="nc bnc" id="L48" title="All 2 branches missed.">            items[i].quality = (items[i].quality &gt;0)? items[i].quality-1 : 0;</span>
+        }
+    
+<span class="nc" id="L51">	}</span>
+
+    public void updateQuality(){
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        for (int i = 0; i &lt; items.length; i++) {</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">          if (!items[i].name.equals(SULFURAS)){</span>
+<span class="nc" id="L56">            items[i].sellIn -= 1;</span>
+          }
+            //Switch permettant d'effectuer un premier tri en fonction du nom de l'objet -&gt; Simplifie le code en cadrant les rÃ©sultats
+<span class="nc bnc" id="L59" title="All 4 branches missed.">            switch (items[i].name) {</span>
+                case &quot;Aged Brie&quot;:
+<span class="nc" id="L61">                    agedBrieQuality(i);</span>
+<span class="nc" id="L62">                    break;</span>
+
+                //On note ce cas mÃªme si on effectue aucunes actions pour Ã©viter le case default
+                case &quot;Sulfuras, Hand of Ragnaros&quot;:
+<span class="nc" id="L66">                	sulfurasQuality(i);</span>
+<span class="nc" id="L67">                    break;</span>
+
+                case &quot;Backstage passes to a TAFKAL80ETC concert&quot;:
+<span class="nc" id="L70">                	backstageQuality(i);</span>
+<span class="nc" id="L71">                    break;</span>
+
+                //Ce cas permettra de gÃ©rer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas prÃ©cÃ©dents
+                default :
+<span class="nc" id="L75">                    defaultObjectQuality(i);</span>
+            }
+        }
+<span class="nc" id="L78">      }</span>
+    }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
