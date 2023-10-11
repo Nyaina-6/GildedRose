@@ -9,6 +9,7 @@ class GildedRose {
   static final int QUALITY_MAX = 50;
   static final int BACKSTAGE_SELLIN_LIMIT2 = 11;
   static final int BACKSTAGE_SELLIN_LIMIT3 = 6;
+  private int quality = 0 ;
   Item[] items;
 
   public GildedRose(Item[] items) {
@@ -32,9 +33,12 @@ class GildedRose {
 		  items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;
 	}
   public void backstageQuality(int i){
-    if (items[i].quality < 50){
-        items[i].quality  = (items[i].sellIn <=0) ? 0 : items[i].quality+1 ;
-    }
+    if (items[i].quality >0){
+        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <=5)? items[i].quality+3 :(items[i].sellIn <=10)? items[i].quality+2:
+        items[i].quality+1 ;
+    
+        items[i].quality = Math.min(quality,50);
+  }
   }
   public void defaultObjectQuality(int i){
 		

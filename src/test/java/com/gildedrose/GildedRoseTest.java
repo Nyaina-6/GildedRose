@@ -176,7 +176,7 @@ class GildedRoseTest {
     assertThat(app.items[0].quality, is(qual+1));
   }
   //test qualité pour Backstage passes avec sa qualité positive qui augmente bien de 1 si SellIn =6
-  /**@Test//enlever pdt refacto
+  @Test//enlever pdt refacto
   void qualiteBackstageSiSellInEgal6 () {
     int qual = 10;
     int sell = 6;
@@ -184,9 +184,9 @@ class GildedRoseTest {
     GildedRose app = new GildedRose(items);
     app.updateQuality();
     assertThat(app.items[0].quality, is(qual+2));
-  }**/
+  }
   //test qualité pour Backstage passes avec sa qualité positive qui augmente bien de 1 si SellIn <=5
-  /**@Test//enler pdt refacto
+  @Test//enler pdt refacto
   void qualiteBackstageSiSellInInferieur5 () {
     int qual = 1;
     int sell = 5;
@@ -194,11 +194,11 @@ class GildedRoseTest {
     GildedRose app = new GildedRose(items);
     app.updateQuality();
     assertThat(app.items[0].quality, is(qual+3));
-  }**/
+  }
   //test quality backstage si quality =50 et sellIn <6
   //j'ai enlevé pdt le refacto
   @Test
-  void qualiteBackstage () {
+  void qualiteBackstage50 () {
     int qual = 50;
     int sell = 1;
     Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", sell, qual) };
@@ -326,7 +326,7 @@ class GildedRoseTest {
   @Test
   void qualityItemQuality0SellInpositif() {
     int qual = 0;
-    int sell = 10;
+    int sell = 10;//1
     Item[] items = new Item[] { new Item("Diamond Boot", sell, qual) };
     GildedRose app = new GildedRose(items);
     app.updateQuality();
