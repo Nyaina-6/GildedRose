@@ -442,22 +442,32 @@ class GildedRoseTest {
   //test pour conjured si sellin positive
 @Test
   void qualiteConjuredSellinPositve () {
-      int qual = 10;
-    int sell = -1;
-    Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", sell, qual) };
+    int qual = 10;
+    int sell = 5;
+    Item[] items = new Item[] { new Item("Conjured Mana Cake", sell, qual) };
     GildedRose app = new GildedRose(items);
-      app.updateQuality();
-      assertThat(app.items[0].quality, is(qual-2));
+    app.updateQuality();
+    assertThat(app.items[0].quality, is(qual-2));
   }
 //test pour conjured si sellin negative
 @Test
   void qualiteConjuredSellinNegative () {
-      int qual = 10;
+    int qual = 10;
     int sell = -1;
-    Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", sell, qual) };
+    Item[] items = new Item[] { new Item("Conjured Mana Cake", sell, qual) };
     GildedRose app = new GildedRose(items);
       app.updateQuality();
-      assertThat(app.items[0].quality, is(qual-2));
+      assertThat(app.items[0].quality, is(qual-4));
+  }
+  //test pour conjured si sellin negative et quality =0
+@Test
+  void qualiteConjuredSellinNegativeQuality0 () {
+    int qual = 0;
+    int sell = -1;
+    Item[] items = new Item[] { new Item("Conjured Mana Cake", sell, qual) };
+    GildedRose app = new GildedRose(items);
+      app.updateQuality();
+      assertThat(app.items[0].quality, is(qual));
   }
 }
 

@@ -5,6 +5,7 @@ class GildedRose {
   static final String AGED_BRIE = "Aged Brie";
   static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
   static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
+  static final String CONJURED ="Conjured Mana Cake";
 
   static final int QUALITY_MAX = 50;
   static final int BACKSTAGE_SELLIN_LIMIT2 = 11;
@@ -54,7 +55,7 @@ class GildedRose {
         }
     
 	}
-  public void ConjuredQuality(int i){
+  public void conjuredQuality(int i){
     if (items[i].sellIn >0){
       items[i].quality = Math.max(items[i].quality-2 , 0);
     }
@@ -65,7 +66,6 @@ class GildedRose {
         }
     
 	}
-  }
   public void updateQuality(){
     for (int i = 0; i < items.length; i++) {
       if (!items[i].name.equals(SULFURAS)){
@@ -77,7 +77,7 @@ class GildedRose {
                 agedBrieQuality(i);
                 break;
 
-            //On note ce cas même si on effectue aucunes actions pour éviter le case default
+           
             case "Sulfuras, Hand of Ragnaros":
               sulfurasQuality(i);
                 break;
@@ -86,6 +86,9 @@ class GildedRose {
               backstageQuality(i);
                 break;
 
+            case "Conjured Mana Cake" :
+              conjuredQuality(i);
+              break;
             //Ce cas permettra de gérer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas précédents
             default :
                 defaultObjectQuality(i);
