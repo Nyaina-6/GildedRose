@@ -21,57 +21,57 @@ class GildedRose {
         items[i].quality += 1 ;
     }
   }
-
-  public void updateQuality() {
+  public void agedBrieQuality(int i){
+    if (items[i].quality == QUALITY_MAX){
+        items[i].quality = QUALITY_MAX ;
+    }
+        qualiteAugmentantDe1(i);
+    
+    }
+  public void sulfurasQuality(int i){
+		  items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;
+	}
+  public void backstageQuality(int i){
+    if (items[i].quality < 50){
+        items[i].quality  = (items[i].sellIn <=0) ? 0 : items[i].quality+1 ;
+    }
+  }
+  public void defaultObjectQuality(int i){
+		
+    if (items[i].sellIn >0){
+      items[i].quality = Math.max(items[i].quality-1 , 0);
+    }
+    
+    if(items[i].sellIn<=0) 
+        {
+            items[i].quality = (items[i].quality >0)? items[i].quality-2 : 0;
+        }
+    
+	}
+  public void updateQuality(){
     for (int i = 0; i < items.length; i++) {
-      if (!items[i].name.equals("Aged Brie")
-          && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-        if (items[i].quality > 0) {
-          if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-            items[i].quality = items[i].quality - 1;
-          }
-        }
-      } else {
-        if (items[i].quality < 50) {
-          items[i].quality = items[i].quality + 1;
-
-          if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (items[i].sellIn < 11) {
-              if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
-              }
-            }
-
-            if (items[i].sellIn < 6) {
-              if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
-              }
-            }
-          }
-        }
+      if (!items[i].name.equals(SULFURAS)){
+        items[i].sellIn -= 1;
       }
+        //Switch permettant d'effectuer un premier tri en fonction du nom de l'objet -> Simplifie le code en cadrant les résultats
+        switch (items[i].name) {
+            case "Aged Brie":
+                agedBrieQuality(i);
+                break;
 
-      if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-        items[i].sellIn = items[i].sellIn - 1;
-      }
+            //On note ce cas même si on effectue aucunes actions pour éviter le case default
+            case "Sulfuras, Hand of Ragnaros":
+              sulfurasQuality(i);
+                break;
 
-      if (items[i].sellIn < 0) {
-        if (!items[i].name.equals("Aged Brie")) {
-          if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (items[i].quality > 0) {
-              if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].quality = items[i].quality - 1;
-              }
-            }
-          } else {
-            items[i].quality = items[i].quality - items[i].quality;
-          }
-        } else {
-          if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
-          }
+            case "Backstage passes to a TAFKAL80ETC concert":
+              backstageQuality(i);
+                break;
+
+            //Ce cas permettra de gérer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas précédents
+            default :
+                defaultObjectQuality(i);
         }
-      }
     }
   }
 }
