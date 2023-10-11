@@ -33,13 +33,15 @@ class GildedRose {
 		  items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;
 	}
   public void backstageQuality(int i){
-    if (items[i].quality >0){
-        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <=5)? items[i].quality+3 :(items[i].sellIn <=10)? items[i].quality+2:
+    if (items[i].quality <50){
+        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <6)? items[i].quality+3 :(items[i].sellIn <11)? items[i].quality+2:
         items[i].quality+1 ;
-    
+        //items[i].quality = (items[i].quality ==6)? items[i].quality+2 : items[i].quality+1;
+        
+
         items[i].quality = Math.min(quality,50);
   }
-  }
+}
   public void defaultObjectQuality(int i){
 		
     if (items[i].sellIn >0){
@@ -52,6 +54,18 @@ class GildedRose {
         }
     
 	}
+  public void ConjuredQuality(int i){
+    if (items[i].sellIn >0){
+      items[i].quality = Math.max(items[i].quality-2 , 0);
+    }
+    
+    if(items[i].sellIn<=0) 
+        {
+            items[i].quality = (items[i].quality >0)? items[i].quality-4 : 0;
+        }
+    
+	}
+  }
   public void updateQuality(){
     for (int i = 0; i < items.length; i++) {
       if (!items[i].name.equals(SULFURAS)){
