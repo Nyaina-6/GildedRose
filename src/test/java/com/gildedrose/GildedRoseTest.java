@@ -439,6 +439,25 @@ class GildedRoseTest {
       app.updateQuality();
       assertThat(app.items[0].sellIn, is(sell-1));
   }
-
+  //test pour conjured si sellin positive
+@Test
+  void qualiteConjuredSellinPositve () {
+      int qual = 10;
+    int sell = -1;
+    Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", sell, qual) };
+    GildedRose app = new GildedRose(items);
+      app.updateQuality();
+      assertThat(app.items[0].quality, is(qual-2));
+  }
+//test pour conjured si sellin negative
+@Test
+  void qualiteConjuredSellinNegative () {
+      int qual = 10;
+    int sell = -1;
+    Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", sell, qual) };
+    GildedRose app = new GildedRose(items);
+      app.updateQuality();
+      assertThat(app.items[0].quality, is(qual-2));
+  }
 }
 
