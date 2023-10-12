@@ -1,6 +1,8 @@
 
 package com.gildedrose;
 
+/* Aina Lariol */
+
 class GildedRose {
   static final String AGED_BRIE = "Aged Brie";
   static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
@@ -35,49 +37,37 @@ class GildedRose {
 	}
   public void backstageQuality(int i){
     if (items[i].quality <50){
-        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <6)? items[i].quality+3 :(items[i].sellIn <11)? items[i].quality+2:
-        items[i].quality+1 ;
-        //items[i].quality = (items[i].quality ==6)? items[i].quality+2 : items[i].quality+1;
-        
+        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <5)? 3 :(items[i].sellIn <10)? 2:1 ;
 
-        items[i].quality = Math.min(quality,50);
-  }
-}
-  public void defaultObjectQuality(int i){
-		
-    if (items[i].sellIn >0){
-      items[i].quality = Math.max(items[i].quality-1 , 0);
+        items[i].quality = Math.min(items[i].quality+quality,50);
     }
-    
-    if(items[i].sellIn<=0) 
+  }
+  public void defaultObjectQuality(int i)
+  {
+    items[i].quality = Math.max(items[i].quality-1 , 0);
+    if(items[i].sellIn<=0)
         {
-            items[i].quality = (items[i].quality >0)? items[i].quality-2 : 0;
+            items[i].quality = (items[i].quality >0)? items[i].quality-1 : 0;
         }
     
 	}
   public void conjuredQuality(int i){
-    if (items[i].sellIn >0){
-      items[i].quality = Math.max(items[i].quality-2 , 0);
-    }
-    
-    if(items[i].sellIn<=0) 
-        {
-            items[i].quality = (items[i].quality >0)? items[i].quality-4 : 0;
-        }
+
+      quality = (items[i].sellIn > 0)? items[i].quality-2 : items[i].quality-4;
+      items[i].quality = Math.max(quality , 0);
     
 	}
   public void updateQuality(){
     for (int i = 0; i < items.length; i++) {
-      if (!items[i].name.equals(SULFURAS)){
+
         items[i].sellIn -= 1;
-      }
+      
         //Switch permettant d'effectuer un premier tri en fonction du nom de l'objet -> Simplifie le code en cadrant les résultats
         switch (items[i].name) {
             case "Aged Brie":
                 agedBrieQuality(i);
                 break;
 
-           
             case "Sulfuras, Hand of Ragnaros":
               sulfurasQuality(i);
                 break;
