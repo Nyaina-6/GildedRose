@@ -1,112 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="40" skipped="0" failures="1" errors="0" timestamp="2023-10-12T21:09:22" hostname="AINA-PC" time="0.205">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="40" skipped="0" failures="0" errors="0" timestamp="2023-10-13T11:32:39" hostname="AINA-PC" time="0.098">
   <properties/>
-  <testcase name="sellInBackstage()" classname="com.gildedrose.GildedRoseTest" time="0.073"/>
+  <testcase name="sellInBackstage()" classname="com.gildedrose.GildedRoseTest" time="0.024"/>
   <testcase name="qualiteBackstageSiSellInSuperieur5Quality49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualityItemSellIn0QualitySuperieur0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteSulfurasSellInInferieur0Quality0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteBackstageSiSellInauMoins10Qualite49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteBackstageSiSellInauMoins10QualitePositive()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="sellInItemQualitySellInnegative()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="sellInItemQualitySellInnegative()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualitePositiveAgedBriesiSellInNegative50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="sellInBackstageSellinInf10()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualityItem()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualityItem()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualiteAgedBrie49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="sellInItem()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="sellInItemQualitynegative()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteSulfurasSellInInferieur0()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="qualityItemSellInInferieur0QualitySuperieur0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellInItemQualitynegative()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="qualiteSulfurasSellInInferieur0()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="qualityItemSellInInferieur0QualitySuperieur0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="sellInSulfurasquality80()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteBackstage50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualityItemSellIn0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteBackstageSiSellIna11Qualite49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteBackstageSiSellInPlusde10()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualiteBackstageSiSellInPlusde10()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualityItemSellInInferieur0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="SellInAgedBrie()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteAgedBrie()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteBackstageSiSellInInferieur5()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualiteBackstageSiSellInInferieur5()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="SellInAgedBriequality0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteBackstageSiSellInauMoins5Qualite49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualiteBackstageSiSellInauMoins5Qualite49()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualiteConjuredSellinNegative()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteBackstageSiSellIna11Qualitepositive()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualiteBackstageSiSellIna11Qualitepositive()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualityItemQuality0SellInpositif()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualite0AgedBriesiSellInPositive()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="sellInItemSellInZero()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualite0AgedBriesiSellInPositive()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellInItemSellInZero()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualiteSulfuras()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualityItemQualitySellIn50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteAgedBrieCinquante()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="qualiteAgedBrieCinquante()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="qualiteBackstageSiSellInEgal6()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="qualiteBackstageSiSellInInférieur0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="qualiteBackstageSiSellInEgale0()" classname="com.gildedrose.GildedRoseTest" time="0.031">
-    <failure message="java.lang.AssertionError: &#13;&#10;Expected: is &lt;0&gt;&#13;&#10;     but: was &lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: is &lt;0&gt;
-     but: was &lt;2&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at com.gildedrose.GildedRoseTest.qualiteBackstageSiSellInEgale0(GildedRoseTest.java:219)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:515)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:171)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:167)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:114)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:59)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:105)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:110)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:110)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:72)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:71)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</failure>
-  </testcase>
+  <testcase name="qualiteBackstageSiSellInInférieur0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="qualiteBackstageSiSellInEgale0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="sellInAgedBriesiSellInNegative()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="qualiteConjuredSellinPositve()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

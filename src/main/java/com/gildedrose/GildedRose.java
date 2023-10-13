@@ -10,8 +10,6 @@ class GildedRose {
   static final String CONJURED ="Conjured Mana Cake";
 
   static final int QUALITY_MAX = 50;
-  static final int BACKSTAGE_SELLIN_LIMIT2 = 11;
-  static final int BACKSTAGE_SELLIN_LIMIT3 = 6;
   private int quality = 0 ;
   Item[] items;
 
@@ -32,25 +30,14 @@ class GildedRose {
         qualiteAugmentantDe1(i);
     
     }
-  public void sulfurasQuality(int i){
-		  items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;
-	}
   public void backstageQuality(int i){
     if (items[i].quality <50){
-        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <5)? 3 :(items[i].sellIn <10)? 2:1 ;
-
-        items[i].quality = Math.min(items[i].quality+quality,50);
+        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <5)? (items[i].quality+3) :(items[i].sellIn <10)?
+            (items[i].quality+2):(items[i].quality+1);
+        items[i].quality = Math.min(quality,50);
     }
   }
-  public void defaultObjectQuality(int i)
-  {
-    items[i].quality = Math.max(items[i].quality-1 , 0);
-    if(items[i].sellIn<=0)
-        {
-            items[i].quality = (items[i].quality >0)? items[i].quality-1 : 0;
-        }
-    
-	}
+  
   public void conjuredQuality(int i){
 
       quality = (items[i].sellIn > 0)? items[i].quality-2 : items[i].quality-4;
@@ -69,7 +56,7 @@ class GildedRose {
                 break;
 
             case "Sulfuras, Hand of Ragnaros":
-              sulfurasQuality(i);
+                items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;
                 break;
 
             case "Backstage passes to a TAFKAL80ETC concert":
@@ -81,7 +68,11 @@ class GildedRose {
               break;
             //Ce cas permettra de gérer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas précédents
             default :
-                defaultObjectQuality(i);
+            items[i].quality = Math.max(items[i].quality-1 , 0);
+            if(items[i].sellIn<=0)
+                {
+                    items[i].quality = (items[i].quality >0)? items[i].quality-1 : 0;
+                }
         }
     }
   }
