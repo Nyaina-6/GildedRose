@@ -30,20 +30,7 @@ class GildedRose {
         qualiteAugmentantDe1(i);
     
     }
-  public void backstageQuality(int i){
-    if (items[i].quality <50){
-        quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <5)? (items[i].quality+3) :(items[i].sellIn <10)?
-            (items[i].quality+2):(items[i].quality+1);
-        items[i].quality = Math.min(quality,50);
-    }
-  }
   
-  public void conjuredQuality(int i){
-
-      quality = (items[i].sellIn > 0)? items[i].quality-2 : items[i].quality-4;
-      items[i].quality = Math.max(quality , 0);
-    
-	}
   public void updateQuality(){
     for (int i = 0; i < items.length; i++) {
 
@@ -60,11 +47,16 @@ class GildedRose {
                 break;
 
             case "Backstage passes to a TAFKAL80ETC concert":
-              backstageQuality(i);
+                if (items[i].quality <50){
+                    quality  = (items[i].sellIn <=0) ? 0 : (items[i].sellIn <5)? (items[i].quality+3) :(items[i].sellIn <10)?
+                      (items[i].quality+2):(items[i].quality+1);
+                    items[i].quality = Math.min(quality,50);
+    }
                 break;
 
             case "Conjured Mana Cake" :
-              conjuredQuality(i);
+              quality = (items[i].sellIn > 0)? items[i].quality-2 : items[i].quality-4;
+              items[i].quality = Math.max(quality , 0);
               break;
             //Ce cas permettra de gérer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas précédents
             default :

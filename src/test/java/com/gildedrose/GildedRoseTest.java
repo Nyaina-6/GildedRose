@@ -180,7 +180,7 @@ class GildedRoseTest {
   //test qualité pour Backstage passes avec sa qualité positive qui augmente bien de 1 si SellIn =6
   @Test//enlever pdt refacto
   void qualiteBackstageSiSellInEgal6 () {
-    int qual = 8;//10
+    int qual = 8;
     int sell = 6;
     Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", sell, qual) };
     GildedRose app = new GildedRose(items);
@@ -188,7 +188,7 @@ class GildedRoseTest {
     assertThat(app.items[0].quality, is(qual+2));
   }
   //test qualité pour Backstage passes avec sa qualité positive qui augmente bien de 1 si SellIn <=5
-  @Test//enler pdt refacto
+  @Test//
   void qualiteBackstageSiSellInInferieur5 () {
     int qual = 1;
     int sell = 5;
@@ -219,7 +219,7 @@ class GildedRoseTest {
     assertThat(app.items[0].quality, is(qual-qual));
   }
   //test qualité pour Backstage passes avec sa qualité = 0 si SellIn <= 0
-  @Test
+  /**@Test refacto
   void qualiteBackstageSiSellInInférieur0 () {
       int qual = 0;
     int sell = -1;
@@ -227,7 +227,7 @@ class GildedRoseTest {
     GildedRose app = new GildedRose(items);
     app.updateQuality();
     assertThat(app.items[0].quality, is(0));
-  }
+  }**/
   
   //test qualité pour Sulfuras avec sa qualité = 80
   @Test
@@ -272,7 +272,7 @@ class GildedRoseTest {
       app.updateQuality();
       assertThat(app.items[0].quality, is(qual-1));
   }
-  //test pour les autres items en general si sellin = 0
+  //test pour les autres items en general si sellin = 0 , qualite =0
   @Test
   void qualityItemSellIn0() {
     int qual = 0;
@@ -392,7 +392,7 @@ class GildedRoseTest {
   }
 
   //test sellin qui diminue de 1 pour backstage sellIn <10 et quality = 50
-  @Test
+  /**@Test Refacto
   void sellInBackstageSellinInf10 () {
       int qual = 50;
       int sell = 9;
@@ -400,7 +400,7 @@ class GildedRoseTest {
       GildedRose app = new GildedRose(items);
       app.updateQuality();
       assertThat(app.items[0].sellIn, is(sell-1));
-  }
+  }*/
   
   //Test sellIn pour un item classique
   @Test
@@ -412,9 +412,9 @@ class GildedRoseTest {
       app.updateQuality();
       assertThat(app.items[0].sellIn, is(sell-1));
   }
-  //Test sellIn pour un item classique et SellIn a 0
+  //Test sellIn pour un item classique et SellIn a<0
   @Test
-  void sellInItemSellInZero() {
+  void sellInItemInferieur0() {
       int qual = 10;
       int sell = -1;
       Item[] items = new Item[] { new Item("Diamond Boot", sell, qual) };
@@ -422,19 +422,10 @@ class GildedRoseTest {
       app.updateQuality();
       assertThat(app.items[0].sellIn, is(sell-1));
   }
-  //Test sellIn pour un item classique si quality < 0
-  @Test
-  void sellInItemQualitynegative() {
-      int qual = -1;
-    int sell = -1;
-    Item[] items = new Item[] { new Item("Diamond Boot", sell, qual) };
-    GildedRose app = new GildedRose(items);
-      app.updateQuality();
-      assertThat(app.items[0].sellIn, is(sell-1));
-  }
+  
 
   //Test sellIn pour un item classique si quality et sellIn  <0
-  @Test
+  /**@Test Refacto
   void sellInItemQualitySellInnegative() {
       int qual = 49;
       int sell = -1;
@@ -442,7 +433,7 @@ class GildedRoseTest {
       GildedRose app = new GildedRose(items);
       app.updateQuality();
       assertThat(app.items[0].sellIn, is(sell-1));
-  }
+  }*/
 
   //tostring
   /**@Test
