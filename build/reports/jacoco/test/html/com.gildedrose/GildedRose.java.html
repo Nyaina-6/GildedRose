@@ -4,69 +4,60 @@ package com.gildedrose;
 /* Aina Lariol */
 
 class GildedRose {
-  static final String AGED_BRIE = &quot;Aged Brie&quot;;
-  static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
-  static final String BACKSTAGE = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
-  static final String CONJURED =&quot;Conjured Mana Cake&quot;;
-
-  static final int QUALITY_MAX = 50;
-<span class="fc" id="L13">  private int quality = 0 ;</span>
+  
+<span class="fc" id="L8">  private int quality = 0 ;</span>
   Item[] items;
 
-<span class="fc" id="L16">  public GildedRose(Item[] items) {</span>
+<span class="fc" id="L11">  public GildedRose(Item[] items) {</span>
     
-<span class="fc" id="L18">    this.items = items;</span>
-<span class="fc" id="L19">  }</span>
+<span class="fc" id="L13">    this.items = items;</span>
+<span class="fc" id="L14">  }</span>
 
-  public void qualiteAugmentantDe1( int i){
-<span class="fc bfc" id="L22" title="All 2 branches covered.">    if (items[i].quality &lt; QUALITY_MAX ) {</span>
-<span class="fc" id="L23">        items[i].quality += 1 ;</span>
-    }
-<span class="fc" id="L25">  }</span>
-  public void agedBrieQuality(int i){
-<span class="fc bfc" id="L27" title="All 2 branches covered.">    if (items[i].quality == QUALITY_MAX){</span>
-<span class="fc" id="L28">        items[i].quality = QUALITY_MAX ;</span>
-    }
-<span class="fc" id="L30">        qualiteAugmentantDe1(i);</span>
+  public int qualiteAugmentantDe1(int i){
+<span class="fc" id="L17">      return items[i].quality += 1;</span>
     
-<span class="fc" id="L32">    }</span>
-  
+  }
+  public int qualiteDiminuantDe1(int i){
+<span class="fc" id="L21">      return items[i].quality -= 1;</span>
+    
+  }
+
   public void updateQuality(){
-<span class="fc bfc" id="L35" title="All 2 branches covered.">    for (int i = 0; i &lt; items.length; i++) {</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">    for (int i = 0; i &lt; items.length; i++) {</span>
 
-<span class="fc" id="L37">        items[i].sellIn -= 1;</span>
+<span class="fc" id="L28">        items[i].sellIn -= 1;</span>
       
         //Switch permettant d'effectuer un premier tri en fonction du nom de l'objet -&gt; Simplifie le code en cadrant les rÃ©sultats
-<span class="fc bfc" id="L40" title="All 5 branches covered.">        switch (items[i].name) {</span>
+<span class="fc bfc" id="L31" title="All 5 branches covered.">        switch (items[i].name) {</span>
             case &quot;Aged Brie&quot;:
-<span class="fc" id="L42">                agedBrieQuality(i);</span>
-<span class="fc" id="L43">                break;</span>
+<span class="fc" id="L33">                items[i].quality = Math.min(qualiteAugmentantDe1(i),50);</span>
+<span class="fc" id="L34">                break;</span>
 
             case &quot;Sulfuras, Hand of Ragnaros&quot;:
-<span class="fc bfc" id="L46" title="All 2 branches covered.">                items[i].quality = (items[i].quality == 0)? 0 : items[i].quality;</span>
-<span class="fc" id="L47">                break;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">                items[i].quality = (items[i].quality == 0)? 0 : 80;</span>
+<span class="fc" id="L38">                break;</span>
 
             case &quot;Backstage passes to a TAFKAL80ETC concert&quot;:
-<span class="fc bfc" id="L50" title="All 2 branches covered.">                if (items[i].quality &lt;50){</span>
-<span class="fc bfc" id="L51" title="All 6 branches covered.">                    quality  = (items[i].sellIn &lt;=0) ? 0 : (items[i].sellIn &lt;5)? (items[i].quality+3) :(items[i].sellIn &lt;10)?</span>
-<span class="fc" id="L52">                      (items[i].quality+2):(items[i].quality+1);</span>
-<span class="fc" id="L53">                    items[i].quality = Math.min(quality,50);</span>
-    }
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (items[i].quality &lt;50){</span>
+<span class="fc bfc" id="L42" title="All 6 branches covered.">                    quality  = (items[i].sellIn &lt;=0) ? 0 : (items[i].sellIn &lt;5)? (items[i].quality+3) :(items[i].sellIn &lt;10)?</span>
+<span class="fc" id="L43">                      (items[i].quality+2):(qualiteAugmentantDe1(i));</span>
+<span class="fc" id="L44">                    items[i].quality = Math.min(quality,50);</span>
+                }
                 break;
 
             case &quot;Conjured Mana Cake&quot; :
-<span class="fc bfc" id="L58" title="All 2 branches covered.">              quality = (items[i].sellIn &gt; 0)? items[i].quality-2 : items[i].quality-4;</span>
-<span class="fc" id="L59">              items[i].quality = Math.max(quality , 0);</span>
-<span class="fc" id="L60">              break;</span>
-            //Ce cas permettra de gÃ©rer tous les objets 'classiques' qui ne sont pas pris en compte dans les cas prÃ©cÃ©dents
+<span class="fc bfc" id="L49" title="All 2 branches covered.">              quality = (items[i].sellIn &gt; 0)? items[i].quality-2 : items[i].quality-4;</span>
+<span class="fc" id="L50">              items[i].quality = Math.max(quality , 0);</span>
+<span class="fc" id="L51">              break;</span>
+            
             default :
-<span class="fc" id="L63">            items[i].quality = Math.max(items[i].quality-1 , 0);</span>
-<span class="fc bfc" id="L64" title="All 2 branches covered.">            if(items[i].sellIn&lt;=0)</span>
+<span class="fc" id="L54">              items[i].quality = Math.max(qualiteDiminuantDe1(i) , 0);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">              if(items[i].sellIn&lt;=0)</span>
                 {
-<span class="fc bfc" id="L66" title="All 2 branches covered.">                    items[i].quality = (items[i].quality &gt;0)? items[i].quality-1 : 0;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">                    items[i].quality = (items[i].quality &gt;0)? qualiteDiminuantDe1(i) : 0;</span>
                 }
         }
     }
-<span class="fc" id="L70">  }</span>
+<span class="fc" id="L61">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
