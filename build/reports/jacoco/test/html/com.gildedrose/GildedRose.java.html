@@ -51,13 +51,10 @@ class GildedRose {
 <span class="fc" id="L51">              break;</span>
             
             default :
-<span class="fc" id="L54">              items[i].quality = Math.max(qualiteDiminuantDe1(i) , 0);</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">              if(items[i].sellIn&lt;=0)</span>
-                {
-<span class="fc bfc" id="L57" title="All 2 branches covered.">                    items[i].quality = (items[i].quality &gt;0)? qualiteDiminuantDe1(i) : 0;</span>
-                }
+<span class="fc bfc" id="L54" title="All 2 branches covered.">              quality = (items[i].sellIn &gt; 0)? qualiteDiminuantDe1(i) : items[i].quality-2;</span>
+<span class="fc" id="L55">              items[i].quality = Math.max(quality , 0);</span>
         }
     }
-<span class="fc" id="L61">  }</span>
+<span class="fc" id="L58">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

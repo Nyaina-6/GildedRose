@@ -51,11 +51,8 @@ class GildedRose {
               break;
             
             default :
-              items[i].quality = Math.max(qualiteDiminuantDe1(i) , 0);
-              if(items[i].sellIn<=0)
-                {
-                    items[i].quality = (items[i].quality >0)? qualiteDiminuantDe1(i) : 0;
-                }
+              quality = (items[i].sellIn > 0)? qualiteDiminuantDe1(i) : items[i].quality-2;
+              items[i].quality = Math.max(quality , 0);
         }
     }
   }
